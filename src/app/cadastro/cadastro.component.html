@@ -1,0 +1,46 @@
+<div class="caixa">
+    <div class="caixa-login">
+        <div class="area-de-login">
+            <h2 class="primeiro-titulo">Bem-Vindo, de volta!</h2>
+            <p class="p-titulo1">para se manter conectado, faça seu login</p>
+            <a [routerLink]="['/login']" class="botao-entrar">Entrar</a>
+        </div>
+        <div class="criar-login">
+            <h2 class="segundo-titulo">Criar Conta</h2>
+            <form class="form" (ngSubmit)="cadastrar()">
+
+                <label class="form-login" for="nome">
+                    <input type="text" id="nome" placeholder="Nome" formControlName="nome">
+                </label>
+                <span
+                    *ngIf="(formulario.get('nome')?.touched || submetido) && formulario.get('nome')?.errors?.['required']">
+                    Campo obrigatório
+                </span>
+
+                <label class="form-login" for="email">
+                    <input type="text" id="email" placeholder="E-mail" formControlName="email">
+                </label>
+                <span
+                    *ngIf="(formulario.get('email')?.touched || submetido) && formulario.get('email')?.errors?.['required']">
+                    Campo obrigatório
+                </span>
+                <span *ngIf="formulario.get('email')?.touched && formulario.get('email')?.status === 'INVALID'">
+                    Deve ser um e-mail válido
+                </span>
+
+                <label class="form-login" for="senha">
+                    <input type="password" id="senha" placeholder="Senha" formControlName="senha">
+                </label>
+                <span
+                    *ngIf="(formulario.get('senha')?.touched || submetido) && formulario.get('senha')?.errors?.['required']">
+                    Campo obrigatório
+                </span>
+                <span *ngIf="formulario.get('senha')?.touched && formulario.get('senha')?.status === 'INVALID'">
+                    A senha deve ter no mínimo 8 caracteres, pelo menos 1 letra maiúscula, 1 minúscula, 1 número e 1
+                    caracter especial
+                </span>
+                <button class="botao-form" type="submit">Inscrever</button>
+            </form>
+        </div>
+    </div>
+</div>
