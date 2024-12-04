@@ -1,0 +1,12 @@
+<div class="container">
+    <h2>Usuários</h2>
+    <div class="usuarios">
+        @for (usuario of usuarios; track $index) {
+        <div class="usuario">
+            <span>{{usuario.nome}}</span>
+            <p>{{usuario.email}}</p>
+        </div>
+        }
+    </div>
+    <a class="btn" [routerLink]="['/home']">Voltar a home</a>
+</div>
