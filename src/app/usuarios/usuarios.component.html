@@ -1,8 +1,8 @@
 <div class="container">
     <h2>Usuários</h2>
     <div class="usuarios">
-        @for (usuario of usuarios; track $index) {
-        <div class="usuario">
+        @for (usuario of usuarios$ | async; track usuario.id) {
+        <div class="usuario" (click)="renderUsuario(usuario.id)">
             <span>{{usuario.nome}}</span>
             <p>{{usuario.email}}</p>
         </div>

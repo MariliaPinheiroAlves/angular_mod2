@@ -3,6 +3,7 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HomeComponent } from './home/home.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +26,9 @@ export const routes: Routes = [
     {
         path: 'usuarios',
         component: UsuariosComponent
+    },
+    {
+        path: 'usuario/:id',
+        component: UsuarioComponent
     }
 ];
